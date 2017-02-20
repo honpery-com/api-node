@@ -26,5 +26,8 @@
     "files": [
       "./test/**/*.js"
     ]
+  },
+  "dependencies": {
+    "mongoose": "^4.8.4"
   }
 }
