@@ -1,9 +1,9 @@
 /**
  * 分类 表结构
  */
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-export default {
+module.exports = {
 
     // 名称
     name: {

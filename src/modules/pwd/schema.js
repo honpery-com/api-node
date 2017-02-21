@@ -1,9 +1,9 @@
 /**
  * 密码 表结构
  */
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-export default {
+module.exports = {
 
     // 关联实体id
     link_id: {

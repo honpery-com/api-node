@@ -1,9 +1,9 @@
 /**
  * 用户 表结构
  */
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-export default {
+module.exports = {
 
     // 用户名
     username: {

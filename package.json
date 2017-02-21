@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev node ./src/app.js",
+    "dev": "NODE_ENV=dev ./node_modules/forever/bin/forever -w -c 'node --harmony' ./src/app.js",
     "prod": "NODE_ENV=prod node ./src/app.js",
-    "test": "NODE_ENV=test ava -w"
+    "test": "NODE_ENV=test ava",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,10 @@
   "homepage": "https://github.com/honpery-com/api-node#readme",
   "devDependencies": {
     "ava": "^0.18.2",
-    "codecov": "^1.0.1"
+    "babel-preset-env": "^1.1.8",
+    "codecov": "^1.0.1",
+    "forever": "^0.15.3",
+    "mockjs": "^1.0.1-beta3"
   },
   "ava": {
     "files": [
@@ -28,6 +32,10 @@
     ]
   },
   "dependencies": {
+    "koa": "^2.0.0-alpha.8",
+    "koa-cors": "0.0.16",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.0.1",
     "mongoose": "^4.8.4"
   }
 }
