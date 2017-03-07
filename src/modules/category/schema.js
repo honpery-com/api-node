@@ -1,5 +1,5 @@
 /**
- * 分类 表结构
+ * category module schema.
  */
 const mongoose = require('mongoose');
 
@@ -13,31 +13,15 @@ module.exports = {
 
     // 描述
     description: {
-        type: String
+        tyoe: String,
+        default: ''
     },
 
-    // 创建人
+    // 发布人
     create_user: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
-    },
-
-    // 创建时间
-    create_time: {
-        type: Date,
-        default: Date.now
-    },
-
-    // 更新时间
-    update_time: {
-        type: Date,
-        default: Date.now
-    },
-
-    // 软删除
-    deleted: {
-        type: Boolean,
-        default: false
     }
+
 
 };

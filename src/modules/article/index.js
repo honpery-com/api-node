@@ -1,12 +1,6 @@
 /**
- * 文章路由
+ * article module router.
  */
-const Router = require('koa-router');
-const _router = new Router();
+const _router = new require('koa-router')();
 
-module.exports = _router
-
-    // 列表
-    .get('/', async (ctx) => {
-
-    })
+module.exports = _router;

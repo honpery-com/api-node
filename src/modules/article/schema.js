@@ -1,9 +1,9 @@
 /**
- * 文章 表结构
+ * article module schema.
  */
 const mongoose = require('mongoose');
 
-module.exports = {
+module.exports = new mongoose.Schema({
 
     // 标题
     title: {
@@ -13,35 +13,40 @@ module.exports = {
 
     // 描述
     description: {
-        type: String
+        type: String,
+        default: ''
     },
-
-    // 分类
-    category: {
-        type: mongoose.Types.ObjectId
-    },
-
-    // 标签
-    tags: [
-        {
-            type: mongoose.Types.ObjectId
-        }
-    ],
 
     // 正文
     body: {
-        type: String
+        type: String,
+        required: true
     },
 
-    // 创建人
+    // 访问量
+    pv: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
+
+    // 访客数
+    uv: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
+
+    // 发布人
     create_user: {
-        type: mongoose.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     },
 
-    // 发布时间
+    // 创建时间
     create_time: {
         type: Date,
-        default: Date.now
+        defualt: Date.now
     },
 
     // 更新时间
@@ -50,10 +55,10 @@ module.exports = {
         default: Date.now
     },
 
-    // 软删除
-    deleted: {
+    // 逻辑删除
+    delete: {
         type: Boolean,
         default: false
     }
 
-};
+});

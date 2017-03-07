@@ -1,5 +1,5 @@
 /**
- * category module router.
+ * vote module router.
  */
 const _router = new require('koa-router')();
 

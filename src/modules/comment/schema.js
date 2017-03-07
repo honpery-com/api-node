@@ -1,20 +1,26 @@
 /**
- * picture module schema.
+ * comment module schema.
  */
 const mongoose = require('mongoose');
 
 module.exports = {
 
-    // 文件名
-    filename: {
+    // 关联文章 / 评论
+    link_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
 
-    // 创建人
-    create_user: {
+    // 发布用户
+    user: {
         type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+
+    // 内容
+    content: {
+        type: String,
         required: true
     }
 
-}
+};

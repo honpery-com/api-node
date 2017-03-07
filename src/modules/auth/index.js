@@ -1,5 +1,5 @@
 /**
- * category module router.
+ * auth module router.
  */
 const _router = new require('koa-router')();
 

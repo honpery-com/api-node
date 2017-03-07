@@ -1,7 +1,6 @@
 /**
- * 标签路由
+ * tag module router.
  */
-const Router = require('koa-router');
-const _router = new Router();
+const _router = new require('koa-router')();
 
-module.exports = _router
+module.exports = _router;

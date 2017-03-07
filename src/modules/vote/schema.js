@@ -1,20 +1,27 @@
 /**
- * picture module schema.
+ * vote module schema.
  */
 const mongoose = require('mongoose');
 
 module.exports = {
 
-    // 文件名
-    filename: {
+    // 关联文章 / 评论
+    link_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
 
-    // 创建人
-    create_user: {
+    // 操作用户
+    user: {
         type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+
+    // 类型
+    type: {
+        type: string,
+        enum: ['good', 'bad'],
         required: true
     }
 
-}
+};

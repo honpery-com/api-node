@@ -1,21 +1,18 @@
 /**
- * app entry.
+ * api app.
  */
-const Koa = require('koa');
-const app = new Koa();
-const router = require('./router');
-const logger = require('koa-logger');
-const cors = require('koa-cors');
+const koa = require('koa');
+const app = new koa();
+const config = require('../config').app;
+const middlewares = require('./middlewares');
+const { db } = require('./common');
+const mongoose = require('mongoose');
 
-// logger middleware.
-app.use(logger());
+// connect db
+db.init();
 
-// cors middleware.
-app.use(cors());
+// register custom middlewares.
+Object.keys(middlewares).forEach(name => middlewares[name].init(app));
 
-// router middleware.
-router.init(app);
-
-app.listen(7080, () => {
-    console.log('API server running at 7080 ports.');
-});
+// server.
+app.listen(config[process.env.NODE_ENV].port, () => console.log(`Api server running at ${config[process.env.NODE_ENV].port}`));

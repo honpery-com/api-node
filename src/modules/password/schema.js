@@ -1,20 +1,20 @@
 /**
- * picture module schema.
+ * password schema
  */
 const mongoose = require('mongoose');
 
 module.exports = {
 
-    // 文件名
-    filename: {
+    // 关联用户id
+    link_id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
 
-    // 创建人
-    create_user: {
-        type: mongoose.Schema.Types.ObjectId,
+    // 密文
+    password: {
+        type: String,
         required: true
     }
 
-}
+};

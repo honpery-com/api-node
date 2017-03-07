@@ -1,5 +1,5 @@
 /**
- * 用户 表结构
+ * user module schema.
  */
 const mongoose = require('mongoose');
 
@@ -7,45 +7,32 @@ module.exports = {
 
     // 用户名
     username: {
-        type: String
+        type: String,
+        required: true
     },
 
-    // 昵称
+    // 姓名
     name: {
-        type: String
+        type: String,
+        defualt: ''
     },
 
     // 邮箱
     email: {
-        type: String
+        type: String,
+        default: ''
     },
 
-    // 网站
+    // 站点
     website: {
-        type: String
+        type: String,
+        default: ''
     },
 
     // 来源
     target: {
-        type: String
-    },
-
-    // 创建时间
-    create_time: {
         type: String,
-        default: Date.now
-    },
-
-    // 更新时间
-    update_time: {
-        type: Date,
-        default: Date.now
-    },
-
-    // 软删除
-    deleted: {
-        type: Boolean,
-        default: false
+        default: ''
     }
 
-};
+}

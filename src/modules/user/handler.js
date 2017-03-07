@@ -1,12 +1,37 @@
 /**
- * user handler
+ * user module handler.
  */
+const UserModel = require('../../common/xmodel')('user');
 
-export function list() { }
+class UserHandler {
+    /**
+     * user list.
+     */
+    list(conditions = {}) {
+        return UserModel.list(conditions);
+    }
 
-export function detail() { }
+    /**
+     * user detail.
+     */
+    detail(_id) {
+        return UserModel.detail(_id);
+    }
 
-export function create() { }
+    /**
+     * user create.
+     */
+    create(newUser) {
+        return UserModel.create(newUser);
+    }
 
-export function update() { }
+    /**
+     * user update.
+     */
+    update(_id, newUser) {
+        return UserModel.update(_id, newUser);
+    }
 
+}
+
+module.exports = new UserHandler();

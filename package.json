@@ -9,6 +9,9 @@
     "test": "NODE_ENV=test ava",
     "test:watch": "npm run test -- --watch"
   },
+  "engines": {
+    "node": ">=7.6.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/honpery-com/api-node.git"
@@ -24,7 +27,8 @@
     "babel-preset-env": "^1.1.8",
     "codecov": "^1.0.1",
     "forever": "^0.15.3",
-    "mockjs": "^1.0.1-beta3"
+    "mockjs": "^1.0.1-beta3",
+    "supervisor": "^0.12.0"
   },
   "ava": {
     "files": [
@@ -32,10 +36,10 @@
     ]
   },
   "dependencies": {
-    "koa": "^2.0.0-alpha.8",
-    "koa-cors": "0.0.16",
-    "koa-logger": "^2.0.1",
+    "koa": "^2.0.1",
+    "koa-jwt": "^2.2.3",
     "koa-router": "^7.0.1",
-    "mongoose": "^4.8.4"
+    "lodash": "^4.17.4",
+    "mongoose": "^4.8.5"
   }
 }
