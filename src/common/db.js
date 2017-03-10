@@ -6,5 +6,5 @@ const config = require('../../config').app;
 
 exports.init = () => {
     mongoose.Promise = global.Promise;
-    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}`);
+    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
 };

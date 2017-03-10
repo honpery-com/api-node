@@ -8,7 +8,8 @@ module.exports = {
     // 用户名
     username: {
         type: String,
-        required: true
+        // required: true,
+        index: { unique: true }
     },
 
     // 姓名
@@ -32,7 +33,8 @@ module.exports = {
     // 来源
     target: {
         type: String,
-        default: ''
+        required: true,
+        enum: ['admin']
     }
 
 }

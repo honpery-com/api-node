@@ -8,7 +8,8 @@ module.exports = {
     // 关联用户id
     link_id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        required: true,
+        unique: true
     },
 
     // 密文

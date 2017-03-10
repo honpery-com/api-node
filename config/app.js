@@ -13,7 +13,8 @@ module.exports = {
     },
     db: {
         host: '139.129.29.110',
-        port: 2017
+        port: 2017,
+        name: 'honpery_com'
     },
     security: {
         mix: 'asdadadadasd',

@@ -1,17 +1,17 @@
 /**
  * auth middleware.
  */
-const jwt = require('koa-jwt');
+const jwt = require('jsonwebtoken');
+const { security } = require('../../config/app');
 
 exports.init = app => app.use(async (ctx, next) => {
+    const { token } = ctx.req.headers;
 
-    // auth router skip.
-    if (/\/auth/.test(ctx.url)) return await next();
+    if (!/\/auth/.test(ctx.url) && !token) {
+        ctx.xerr = "AUTH_NOT_LOGIN";
+    }
 
-    // auth success.
-    if (true) return await next();
+    ctx.user_id = jwt.decode(token, { cert: security.secret, algorithms: security.algorithm }).user_id;
 
-    // auth falid.
-    if (false) return await next();
-
+    await next();
 });

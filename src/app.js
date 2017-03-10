@@ -7,9 +7,13 @@ const config = require('../config').app;
 const middlewares = require('./middlewares');
 const { db } = require('./common');
 const mongoose = require('mongoose');
+const bodyParser = require('koa-bodyparser');
 
-// connect db
+// connect db.
 db.init();
+
+// body parser.
+app.use(bodyParser());
 
 // register custom middlewares.
 Object.keys(middlewares).forEach(name => middlewares[name].init(app));
