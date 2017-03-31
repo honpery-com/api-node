@@ -8,7 +8,7 @@ module.exports = {
     // 用户名
     username: {
         type: String,
-        // required: true,
+        required: true,
         index: { unique: true }
     },
 
@@ -34,7 +34,7 @@ module.exports = {
     target: {
         type: String,
         required: true,
-        enum: ['admin']
+        enum: ['admin', 'system']
     }
 
 }

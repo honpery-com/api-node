@@ -12,8 +12,8 @@ module.exports = {
         port: 7003
     },
     db: {
-        host: '139.129.29.110',
-        port: 2017,
+        host: '127.0.0.1',
+        port: 27017,
         name: 'honpery_com'
     },
     security: {

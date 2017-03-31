@@ -8,7 +8,8 @@ module.exports = {
     // 名称
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     // 描述
@@ -22,6 +23,5 @@ module.exports = {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     }
-
 
 };
