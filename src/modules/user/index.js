@@ -22,4 +22,3 @@ module.exports = _router
     .patch('/:user_id', xauth('USER_MANAGE'), async ctx => {
         ctx.body = await UserHandler.update(ctx.params.user_id, ctx.request.body);
     })
-

@@ -4,14 +4,13 @@
 const mongoose = require('mongoose');
 const { camelCase } = require('lodash');
 const { root } = require('../../helpers');
-const xschema = require('./xschema');
 
 class Xmodel {
 
     constructor(schemaName) {
         if (!(this instanceof Xmodel)) return new Xmodel(schemaName);
 
-        this.$schema = new mongoose.Schema(xschema(require(root(`src/modules/${schemaName}/schema`))));
+        this.$schema = new mongoose.Schema(require(root(`src/modules/${schemaName}/schema`)));
 
         try {
             this.$model = mongoose.model(camelCase(schemaName), this.$schema);

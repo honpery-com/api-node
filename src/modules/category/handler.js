@@ -4,8 +4,9 @@
 const CategoryModel = require('../../common/xmodel')('category');
 
 class CategoryHandler {
+
     list(conditions = {}) {
-        return CategoryModel.list(conditions);
+        return CategoryModel.find(conditions);
     }
     detail(category_id) {
         return CategoryModel.detail(category_id);
